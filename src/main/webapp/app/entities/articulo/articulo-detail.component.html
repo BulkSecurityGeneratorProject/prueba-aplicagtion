@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="articulo">
+            <h2><span>Articulo</span> {{articulo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Codigo</span></dt>
+                <dd>
+                    <span>{{articulo.codigo}}</span>
+                </dd>
+                <dt><span>Descripcion</span></dt>
+                <dd>
+                    <span>{{articulo.descripcion}}</span>
+                </dd>
+                <dt><span>Ubicacion</span></dt>
+                <dd>
+                    <span>{{articulo.ubicacion}}</span>
+                </dd>
+                <dt><span>Unidad</span></dt>
+                <dd>
+                    <span>{{articulo.unidad}}</span>
+                </dd>
+                <dt><span>Valor Unidad</span></dt>
+                <dd>
+                    <span>{{articulo.valorUnidad}}</span>
+                </dd>
+                <dt><span>Id Proveedor</span></dt>
+                <dd>
+                    <span>{{articulo.idProveedor}}</span>
+                </dd>
+                <dt><span>Proveedor</span></dt>
+                <dd>
+                    <div *ngIf="articulo.proveedor">
+                        <a [routerLink]="['/proveedor', articulo.proveedor?.id, 'view']">{{articulo.proveedor?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/articulo', articulo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{
+    "name": "Proveedor",
+    "fields": [
+        {
+            "fieldName": "idProveedor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idProveedor",
+            "otherEntityName": "articulo",
+            "otherEntityRelationshipName": "proveedor"
+        }
+    ],
+    "changelogDate": "20190222031617",
+    "entityTableName": "proveedor",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
